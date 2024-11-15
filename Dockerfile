@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 
 # Instalar bibliotecas Python necessárias
 COPY requirements.txt /app/requirements.txt
-RUN pip3 install -r /app/requirements.txt
+RUN pip3 install --break-system-packages -r /app/requirements.txt
 
 # Copiar o script para o diretório de trabalho
 COPY infobarbank.py /app/infobarbank.py
